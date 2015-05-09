@@ -1,0 +1,86 @@
+<div class="common-container" data-ng-controller="CourseManagerCtrl">
+    <div class="panel panel-default no-border">
+        <div class="panel-heading">
+            <h3 class="panel-title">课程管理</h3>
+        </div>
+        <div class="panel-body">
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend class="relative">选择班级 <span class="abs-icon icon-plus"></span><a class="abs-link" href="javascript:void(0)">新增课程</a></legend>
+                    <div class="form-group">
+                        <label for="grade" class="col-sm-2 control-label">选择年级</label>
+                        <div class="col-sm-2">
+                            <select class="form-control" id="grade">
+                                <option ng-repeat="item in availableGrades" value="{{item}}">{{item}}</option>
+                            </select>
+                        </div>
+                        <label for="term" class="col-sm-2 control-label">选择学期</label>
+                        <div class="col-sm-2">
+                            <select class="form-control" id="term">
+                                <option value="1">上学期</option>
+                                <option value="2">下学期</option>
+                            </select>
+                        </div>
+                        <label for="course" class="col-sm-2 control-label">选择课程</label>
+                        <div class="col-sm-2">
+                            <select class="form-control" id="course">
+                                <option ng-repeat="item in availableCourses" value="{{item}}">{{item}}</option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div class="panel panel-default no-border">
+        <div class="panel-heading">
+            <h3 class="panel-title">学生账户信息</h3>
+        </div>
+        <div class="panel-body">
+            <div class="stu-header">
+                <div><span>指导老师：</span><span>XXX</span></div>
+                <div><span>科任老师：</span><span>张三，李四</span><a href="javascript:void(0)" style="padding-left: 10px;">修改科任老师</a></div>
+                <div><span>学生人数：</span><span>20</span></div>
+            </div>
+            <div class="stu-option text-right">
+                <a ui-sref="teacher-course-group({id:userData.userId})">设定群组</a>
+                <a ui-sref="teacher-student-add({id:userData.userId})">新增学生</a>
+                <a ui-sref="teacher-name-edit({id:userData.userId})">更改学生姓名</a>
+                <a ui-sref="teacher-seat-edit({id:userData.userId})">座号调整</a>
+                <a href="javascript:void(0)">打印学生信息表</a>
+                <a href="javascript:void(0)">导出学生账号资料（.xlsx）</a>
+            </div>
+            <div class="stu-list">
+                <table st-table="rowCollection" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox" ng-model="checkedAll" ng-click="checkAll()" />
+                            <a href="javascript:void(0)" style="padding-left: 2px;">删除</a>
+                        </th>
+                        <th st-sort="sitNum">座号</th>
+                        <th st-sort="getters.name">姓名</th>
+                        <th st-sort="identity">学号</th>
+                        <th st-sort="sex" >性别</th>
+                        <th st-sort="id" >账号</th>
+                        <th st-sort="groupId" >群组编号</th>
+                        <th st-sort="groupName" >组名</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="row in studentsByCourse">
+                        <td><input type="checkbox" ng-checked="row.checked" /></td>
+                        <td>{{row.sitNum}}</td>
+                        <td>{{row.name}}</td>
+                        <td>{{row.identity}}</td>
+                        <td>{{row.sex}}</td>
+                        <td>{{row.id}}</td>
+                        <td>{{row.groupId}}</td>
+                        <td>{{row.groupName}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="common-container" data-ng-controller="CourseManagerCtrl">
+    <div class="panel panel-info no-border">
+        <div class="panel-heading">
+            <h3 class="panel-title">更改学生姓名</h3>
+        </div>
+        <div class="panel-body">
+            <div class="stu-header">
+                <div><span>学年：</span><span>2014 学年 / 下学期</span></div>
+                <div><span>课程名称：</span><span>平面设计</span></div>
+                <div class="text-right"><a ui-sref="teacher-course({id:userData.userId})">返回学生账号管理</a></div>
+            </div>
+            <div class="stu-list well well-sm">
+                <form class="form-horizontal">
+                    <fieldset>
+                        <div class="form-group col-sm-4" ng-repeat="item in studentsByCourse">
+                            <label class="col-sm-12">
+                                <span class="col-sm-5">座号:</span>
+                                <span class="col-sm-7">{{item.sitNum}}</span>
+                            </label>
+                            <label class="col-sm-12">
+                                <span class="col-sm-5">姓名:</span>
+                                <span class="col-sm-7"><input type="text" class="form-control input-control" value="{{item.name}}"></span>
+                            </label>
+                        </div>
+
+                        <div class="col-lg-10 text-center">
+                            <button type="submit" class="btn btn-primary">保存</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <!-- stu-list end-->
+        </div>
+    </div>
+</div>

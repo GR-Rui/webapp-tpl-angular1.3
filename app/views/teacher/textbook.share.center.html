@@ -1,0 +1,42 @@
+<div class="common-container" data-ng-controller="TeacherTextbookCtrl">
+    <div class="panel panel-default no-border">
+        <div class="panel-heading">
+            <h3 class="panel-title">教材分享区</h3>
+        </div>
+        <div class="panel-body">
+            <div class="stu-header">
+                <div><span>教材目录：</span><span>XXX</span></div>
+            </div>
+            <div class="stu-option text-right" style="padding-bottom: 10px;padding-right: 15px;">
+                <a type="button" data-toggle="modal" data-target="#add" style="cursor: pointer;">返回</a>
+            </div>
+            <div class="stu-list">
+                <div class="col-sm-12">
+                    <div>
+                        <span>搜寻老师姓名：</span>
+                        <span><input  type="text" name="searchName" ng-model="searchName"/></span>
+                        <span><a type="button" name="search" >搜寻</a></span>
+                    </div>
+                    <table class="table table-striped table-hover ">
+                        <thead>
+                        <tr>
+                            <th>姓名</th>
+                            <th>性别</th>
+                            <th>文档数目</th>
+                            <th>详细信息</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="item in sharedTextbooks | filter:{name:searchName}">
+                            <td>{{item.name}}</td>
+                            <td>{{item.sex}}</td>
+                            <td>{{item.num}}</td>
+                            <td><a ui-sref="teacher-textbook({id:userData.userId})">详细信息</a></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div><!--  stu-list -->
+        </div><!-- panel -->
+    </div><!-- panel -->
+</div>

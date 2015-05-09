@@ -1,0 +1,59 @@
+<div class="common-container" data-ng-controller="CourseManagerCtrl">
+    <div class="panel panel-info no-border">
+        <div class="panel-heading">
+            <h3 class="panel-title">更改学生姓名</h3>
+        </div>
+        <div class="panel-body">
+            <div class="stu-header">
+                <div><span>学年：</span><span>2014 学年 / 下学期</span></div>
+                <div><span>课程名称：</span><span>平面设计</span></div>
+                <div><a ui-sref="teacher-course({id:userData.userId})">返回学生账号管理</a></div>
+            </div>
+            <div class="stu-list">
+                <form class="form-horizontal" id="fileForm">
+                    <fieldset>
+                        <div class="form-group" style="margin: 20px 40px 40px 20px;">
+                            <label>选择要上传的档案(格式为CSV、XLS、XLSX) :</label>
+                            <div class="col-sm-10">
+                                <input type="file" class="form-control" id="fileUpload">
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+                <form class="form-horizontal" id="addForm">
+                    <fieldset>
+                        <div class="form-group">
+                            <label for="stNumber" class="col-sm-2 control-label">请输入学号</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="stNumber">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="stAccount" class="col-sm-2 control-label">请输入账号</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="stAccount">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">请输入性别</label>
+                            <div class="col-sm-4">
+                                <input type="radio" class="" name="stSex" value="0">男
+                                <input type="radio" class="" name="stSex" value="1">女
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="stEmail" class="col-sm-2 control-label">请输入邮箱</label>
+                            <div class="col-sm-4">
+                                <input type="text" class="form-control" id="stEmail">
+                            </div>
+                        </div>
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="submit" class="btn btn-primary">保存</button>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+            <!-- stu-list end-->
+        </div>
+    </div>
+</div>

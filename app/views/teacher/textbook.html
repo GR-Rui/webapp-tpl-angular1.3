@@ -1,0 +1,19 @@
+<div class="wrapper" data-ng-controller="HeaderCtrl">
+    <div class="row" ng-include="'views/teacher/header.html'"></div>
+    <div class="wrapper-content container">
+        <div class="row">
+            <!-- left slide bar-->
+            <div ng-include="'views/teacher/leftbar.html'"></div>
+            <div class="mid-content col-sm-8">
+                <div ng-include="'views/teacher/notice.html'"></div>
+
+                <!-- To be filled part-->
+                <div ng-include="'views/teacher/textbook.center.html'"></div>
+
+            </div>
+            <!-- right slide bar-->
+            <div ng-include="'views/teacher/rightbar.html'"></div>
+        </div>
+    </div>
+    <div class="row" ng-include="'views/footer.html'"></div>
+</div>

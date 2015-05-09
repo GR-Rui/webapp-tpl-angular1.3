@@ -1,0 +1,36 @@
+/* login page */
+.container-green {
+    background: linear-gradient(135deg, #12a37f 0%,#41af48 100%);
+    min-height: 800px;
+}
+.container-green h2{
+    color: #FFF;
+    text-align: center;
+    padding-top: 30px;
+    margin: 0;
+}
+.container-green .login-form{
+    width: 400px;
+    background-color: #FFF;
+    margin: 0 auto;
+    position: relative;
+    top: 25px;
+    border-radius: 4px;
+}
+.login-form legend{
+    padding: 5px 10px;
+}
+.login-form .form-horizontal .form-group {
+    margin-left: 0;
+    margin-right: 0;
+}
+.login-form .form-group .control-label {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.login-form .form-group i {
+    font-size: 18px;
+}
+.login-form .form-group a {
+    margin-left: 13px;
+}

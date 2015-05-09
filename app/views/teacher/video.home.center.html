@@ -1,0 +1,71 @@
+<div class="common-container video-page" data-ng-controller="VideoHomeCtrl as controller">
+    <div class="panel panel-default no-border">
+        <div class="panel-heading">
+            <h3 class="panel-title">公共视频资源</h3>
+        </div>
+        <div class="panel-body">
+            <section class="row">
+                <div class="col-sm-3" ng-repeat="item in shareVideos">
+                    <article class="template">
+                        <header ui-sref="teacher-video-detail({id:userData.userId, vid: item.id})">
+                            <img src="images/video-thumb.jpg" class="img-responsive" style="cursor: pointer;"/>
+                            <div  class="album-options">
+                                <a ui-sref="teacher-video-detail({id:userData.userId, vid: item.id})">{{item.name}}</a>
+                            </div>
+                        </header>
+                        <div class="album-info clearfix">
+                            <div class="album-info-left">
+                                <p>类型：{{item.type}}</p>
+                                <p>日期：{{item.dataTime}}</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="panel panel-default no-border">
+        <div class="panel-heading">
+            <h3 class="panel-title">个人视频资源</h3>
+        </div>
+        <div class="panel-body">
+            <section class="row">
+                <div class="col-sm-3" ng-repeat="item in shareVideos">
+                    <article class="template">
+                        <header ui-sref="teacher-video-detail({id:userData.userId, vid: item.id})">
+                            <img src="images/video-thumb.jpg" class="img-responsive" style="cursor: pointer;"/>
+                            <div  class="album-options">
+                                <a ui-sref="teacher-video-detail({id:userData.userId, vid: item.id})">{{item.name}}</a>
+                            </div>
+                        </header>
+                        <div class="album-info clearfix">
+                            <div class="album-info-left">
+                                <p>类型：{{item.type}}</p>
+                                <p>日期：{{item.dataTime}}</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </div>
+    <div class="panel panel-default no-border">
+        <div class="panel-heading">
+            <h3 class="panel-title">PDF资源</h3>
+        </div>
+        <div class="panel-body">
+            <section class="row">
+                <div class="col-sm-3">
+                    <article class="template">
+
+                        <div class="album-info clearfix">
+                            <a href="http://localhost:9000/cloud/data/test.pdf" target="_blank">PDF</a>
+                            <a href="http://localhost:9000/cloud/data/videos/videogular.mp4" target="_blank">PDF</a>
+                            <pdf-download url="http://localhost:9000/cloud/data/test.pdf" filename="my-awesome.pdf"></pdf-download>
+                        </div>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </div>
+</div>

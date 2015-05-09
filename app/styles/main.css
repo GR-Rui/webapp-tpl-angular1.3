@@ -1,0 +1,78 @@
+/* Common Setting  */
+body {
+  padding: 0;
+}
+.header,
+.footer {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* Site header */
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
+}
+.header .navbar {
+    border-radius: 0;
+    margin-bottom: 0;
+}
+.header .navbar .navbar-header {
+    padding-left: 50px;
+}
+
+/* Site footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+.footer p {
+    text-align: right;
+    padding-right: 20px;
+}
+/* Site content */
+.img-pdf {
+    background: linear-gradient(135deg, #f70000 0%,#930000 100%);
+    font-size: 36px;
+    color: #fff;
+    border-radius: 4px;
+    padding: 4px;
+}
+.img-word {
+    background: linear-gradient(135deg, #42adb7 0%,#0072ab 100%);
+    font-size: 36px;
+    color: #fff;
+    border-radius: 4px;
+    padding: 4px;
+}
+.img-excel {
+    background: linear-gradient(135deg, #82d900 0%,#138600 100%);
+    font-size: 36px;
+    color: #fff;
+    border-radius: 4px;
+    padding: 4px;
+}
+.align-right {
+    text-align: right;
+}
+.relative {
+    position: relative;
+}
+.st-sort-ascent:before{
+    content: '\25B2';
+}
+
+.st-sort-descent:before{
+    content: '\25BC';
+}
+
+/* Main container */
+.main-container .common-container {
+    background-color: #fff;
+    border: 1px solid #DDD;
+    padding: 0;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}

@@ -1,0 +1,128 @@
+<div class="common-container" data-ng-controller="TeacherTextbookCtrl">
+    <div class="panel panel-default no-border">
+        <div class="panel-heading">
+            <h3 class="panel-title">学生账户信息</h3>
+        </div>
+        <div class="panel-body">
+            <div class="stu-header">
+                <div><span>教材目录：</span><span>XXX</span></div>
+            </div>
+            <div class="stu-option text-right" style="padding-bottom: 10px;padding-right: 15px;">
+                <a type="button" data-toggle="modal" data-target="#add" style="cursor: pointer;">新增文件夹</a>
+                <a type="button" data-toggle="modal" data-target="#share" style="cursor: pointer;">教材分享</a>
+                <a ui-sref="teacher-name-edit({id:userData.userId})">发布教材</a>
+                <a ui-sref="teacher-seat-edit({id:userData.userId})">删除教材名字</a>
+                <a type="button" data-toggle="modal" data-target="#edit" style="cursor: pointer;">修改教材名字</a>
+            </div>
+            <div class="stu-list">
+                <div class="col-sm-4">
+                    <treecontrol class="tree-classic"
+                                 tree-model="dataForTheTree"
+                                 options="treeOptions"
+                                 on-selection="showSelectedDetails(node)"
+                                 selected-node="selectedNode">
+                        {{node.name}}
+                    </treecontrol>
+                </div>
+                <div class="col-sm-8">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Panel info</h3>
+                        </div>
+                        <div class="panel-body">
+                            <table class="table">
+                                <tr>
+                                    <td>名字</td><td>{{selectedNode.name}}</td>
+                                </tr>
+                                <tr>
+                                    <td>发布课程数</td><td>xxxxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>更新时间</td><td>xxxxxx</td>
+                                </tr>
+                                <tr>
+                                    <td>分享</td><td>Yes</td>
+                                </tr>
+                                <tr>
+                                    <td>删除</td><td>Yes</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div><!--  stu-list -->
+        </div><!-- panel -->
+    </div><!-- panel -->
+    <div class="modal" id="add">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">新建文件夹</h4>
+                </div>
+                <div class="modal-body" style="min-height: 120px;">
+                    <div class="form-group">
+                        <label for="newName" class="col-sm-4 control-label" style="top: 8px;">请输入文件夹名称</label>
+                        <div class="col-sm-8">
+                            <input type="text" class="form-control" id="newName" placeholder="文件夹名称">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--update-->
+    <div class="modal" id="edit">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">更改文件名</h4>
+                </div>
+                <div class="modal-body" style="min-height: 120px;">
+                    <div class="form-group">
+                        <div class="col-sm-12">
+                            <p class="control-label">旧的名字</p>
+                        </div>
+                        <label for="editName" class="col-sm-2 control-label" style="top: 8px;">更改为</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="editName">
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--share-->
+    <div class="modal" id="share">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                    <h4 class="modal-title">分享教材</h4>
+                </div>
+                <div class="modal-body" style="min-height: 120px;">
+                    <div class="form-group" style="top: 8px;">
+                        <label for="editName" class="col-sm-2 control-label" >请选择</label>
+                        <div class="col-sm-10">
+                            <input type="radio" class="" name="shareRadio" value="1">分享
+                            <input type="radio" class="" name="shareRadio" value="0">不分享
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary">确认</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,78 @@
+<div class="common-container" data-ng-controller="CourseManagerCtrl">
+    <div class="panel panel-info no-border">
+        <div class="panel-heading">
+            <h3 class="panel-title">课程管理</h3>
+        </div>
+        <div class="panel-body">
+            <div class="stu-header">
+                <div><span>指导老师：</span><span>XXX</span></div>
+                <div><span>学生人数：</span><span>20</span></div>
+                <div class="text-right"><a ui-sref="teacher-course({id:userData.userId})">返回学生账号管理</a></div>
+            </div>
+            <!--<div class="stu-msg">-->
+                <!--<div class="alert alert-dismissible alert-info">-->
+                    <!--<button type="button" class="close" data-dismiss="alert">×</button>-->
+                    <!--<strong>说明 </strong>对应位置信息如右，勾选显示学生IES登入账号可显示帐户信息，拖曳学生方块到指定组别-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="stu-list">
+                <div class="col-sm-5">
+                    <label>默认组学生</label>
+                    <select size="15" multiple ng-model="available" ng-options="item.name for item in availableGroupStudents" style="width: 100%;"></select>
+                </div>
+                <div class="col-sm-2 opt-buttons">
+                    <a href="javascript:void(0)" class="btn btn-primary btn-sm" ng-click="moveItems(available, availableGroupStudents,selectedGroupStudents)">移动<span class="icon-forward3"></span></a>
+                    <a href="javascript:void(0)" class="btn btn-primary btn-sm" ng-click="moveAll(availableGroupStudents,selectedGroupStudents)">全部<span class="icon-forward3"></span></a>
+                    <a href="javascript:void(0)" class="btn btn-primary btn-sm" ng-click="moveItems(selected, selectedGroupStudents,availableGroupStudents, true)"><span class="icon-backward2"></span>移动</a>
+                    <a href="javascript:void(0)" class="btn btn-primary btn-sm" ng-click="moveAll(selectedGroupStudents,availableGroupStudents, true)"><span class="icon-backward2"></span>全部</a>
+
+                    <select class="form-control input-control" ng-model="selectedGroup" ng-change="changeSelectedGroupStudents()"
+                            ng-options="item.name for item in groupsByCourse"></select>
+                    <input ng-show="selectedGroup.id==-1" type="text" name="newGroupName" class="form-control input-control" placeholder="分组名字">
+                </div>
+                <div class="col-sm-5">
+                    <label>所属组学生</label>
+                    <select size="15" multiple ng-model="selected" ng-options="item.name for item in selectedGroupStudents" style="width: 100%;"></select>
+                </div>
+                <div class="col-sm-12 option-bars">
+                    <label class="col-sm-2" style="line-height: 30px;">移动到</label>
+                    <div class="col-sm-2">
+                        <select class="form-control input-control" ng-model="selectedMoveGroup" ng-options="item.name for item in groupsByCourse"></select>
+                    </div>
+                    <div class="col-lg-2">
+                        <button type="submit" class="btn btn-primary btn-sm">保存</button>
+                    </div>
+                </div>
+                <table st-table="rowCollection" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox" ng-model="checkedAll" ng-click="checkAll()" />
+                        </th>
+                        <th st-sort="getters.sitNum">座号</th>
+                        <th st-sort="name">姓名</th>
+                        <th st-sort="identity">学号</th>
+                        <th st-sort="sex" >性别</th>
+                        <th st-sort="id" >账号</th>
+                        <th st-sort="groupId" >群组编号</th>
+                        <th st-sort="groupName" >组名</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="row in studentsByCourse">
+                        <td><input type="checkbox" ng-checked="row.checked" /></td>
+                        <td>{{row.sitNum}}</td>
+                        <td>{{row.name}}</td>
+                        <td>{{row.identity}}</td>
+                        <td>{{row.sex}}</td>
+                        <td>{{row.id}}</td>
+                        <td>{{row.groupId}}</td>
+                        <td>{{row.groupName}}</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!-- stu-list end-->
+        </div>
+    </div>
+</div>

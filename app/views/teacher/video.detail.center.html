@@ -1,0 +1,24 @@
+<div class="common-container" ng-controller="VideoHomeCtrl as controller">
+    <div class="panel panel-default no-border">
+        <div class="panel-heading">
+            <h3 class="panel-title">视频播放页面</h3>
+        </div>
+        <div class="panel-body">
+            <div class="stu-header">
+                <div class="text-right"><a ui-sref="teacher-video({id:userData.userId})">返回视频列表</a></div>
+                <div>视频名字</span></div>
+            </div>
+            <div class="stu-list">
+                <div class="videogular-container">
+                    <videogular vg-theme="controller.config.theme.url">
+                        <vg-media vg-src="controller.config.sources"
+                                  vg-tracks="controller.config.tracks"
+                                  vg-native-controls="true">
+                        </vg-media>
+                    </videogular>
+                </div>
+            </div>
+            <!-- stu-list end-->
+        </div>
+    </div>
+</div>

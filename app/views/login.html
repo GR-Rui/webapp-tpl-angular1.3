@@ -1,0 +1,49 @@
+<div class="page-container" data-ng-controller="LoginCtrl">
+    <div class="container-green">
+        <h2>MOOC职教创业云平台</h2>
+        <!-- error -->
+        <!--<div class="loginForm-error" data-ng-show="loginFailed">-->
+            <!--The user ID or password<br/>you entered is incorrect-->
+        <!--</div>-->
+
+        <!-- login form -->
+        <div class="login-form">
+            <form class="form-horizontal">
+                <fieldset>
+                    <legend>用户登录</legend>
+                    <div class="form-group">
+                        <label for="userName" class="col-lg-1 control-label">
+                            <i class="icon-user icon-user-adjust"></i>
+                        </label>
+
+                        <div class="col-lg-11">
+                            <input type="text" class="form-control" id="userName" name="userName" autofocus
+                                   placeholder="用户名" data-ng-model="form.user">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="col-lg-1 control-label">
+                            <i class="icon-lock"></i>
+                        </label>
+
+                        <div class="col-lg-11">
+                            <input type="text" class="form-control" id="password" name="password" autofocus
+                                   placeholder="密码"
+                                   data-ng-model="form.pass">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-2">
+                            <button type="submit" class="btn btn-primary" data-ng-click="login()"
+                                    data-ng-disabled="loginDisabled()">登录
+                            </button>
+                            <a href="" id="forgot-pass" class="login-link forgot-pass" target="_blank"
+                               data-ng-click="forgotPassword()">忘记密码？</a>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+    <div ng-include="'views/footer.html'"></div>
+</div>
