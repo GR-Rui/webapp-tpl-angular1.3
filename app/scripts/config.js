@@ -6,7 +6,7 @@ Site.constant('ConfigConst', (function () {
   var _env = 'dev';  //DEV or PRD
 
   var _devURLs = {
-    api: 'http://localhost:9000/cloud/data/api/',
+    api: 'http://localhost:8088/data/api/',
     baseUrl: 'http://localhost:9000/'
   };
 
